@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<!-- Widgets Row -->
+<div class="row">
+    <div class="col-md-6">
+        <!-- Timeline Widget -->
+        <div class="widget">
+            <div class="widget-extra themed-background-dark">
+                <h3 class="widget-content-light">
+                    Overview <strong>Lâmpadas</strong>
+
+                </h3>
+            </div>
+            {% for dados in data %}
+            <div class="widget-extra">
+                <div class="col-sm-12 col-lg-12">
+                    <!-- Widget -->
+                    <a href="page_ready_inbox.html" class="widget widget-hover-effect1">
+                        <div class="widget-simple">
+                            <div class="widget-icon pull-left themed-background-{{dados.color}} animation-fadeIn">
+                                <i class="gi gi-lightbulb"></i>
+                            </div>
+                            <h3 class="widget-content text-right animation-pullDown">
+                                {{dados.disponibilidade | stringformat:'0.2f'}} %<strong> de disponibilidade</strong>
+                                <small>{{ dados.anos_func | stringformat:'0.2f'}} anos funcionando</small>
+                                <small>{{ dados.qtd }} de lampadas</small>
+                                <small>{{ dados.qtd_possivel_falha |stringformat:'0.2f' }} possíveis falhas</small>
+                            </h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- END Timeline Widget -->
+    </div>
+    <div class="col-md-6">
+        <!-- Your Plan Widget -->
+        <div class="widget">
+            <div class="widget-extra themed-background-dark">
+                <h3 class="widget-content-light">
+                    Parâmetros <strong>Calculados</strong>
+                </h3>
+            </div>
+            <div class="widget-extra-full">
+                <div class="row text-center">
+                    <div class="col-xs-12 col-lg-4">
+                        <h3>
+                            <strong>3</strong> <small>dias</small><br>
+                            <small><i class="fa fa-folder-open-o"></i> MTTR Geral</small>
+                        </h3>
+                    </div>
+                    <div class="col-xs-12 col-lg-4">
+                        <h3>
+                            <strong>2 </strong> <small>anos</small><br>
+                            <small><i class="fa fa-hdd-o"></i> MTBF Geral</small>
+                        </h3>
+                    </div>
+                    <div class="col-xs-12 col-lg-4">
+                        <h3>
+                            <strong>98</strong> <small>%</small><br>
+                            <small><i class="fa fa-building-o"></i> Disponibilidade Geral</small>
+                        </h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- END Widgets Row -->
+{% endblock %}
