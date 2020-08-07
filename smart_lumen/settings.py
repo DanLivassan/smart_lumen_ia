@@ -25,7 +25,7 @@ SECRET_KEY = '_u+m-^1j!duc&3h@)0m$#=$_@=4ajcqb*p0xw#my5b6wcy8@b&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['daniloxcode.com.br:8083']
 
 
 # Application definition
